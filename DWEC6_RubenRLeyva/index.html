@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+DWEC6 - Rubén Ángel Rodriguez Leyva
+Tarea 6: Predicción del tiempo
+Rubén Ángel Rodriguez Leyva
+-->
+<html>
+    <head>
+        <title>DWEC06 - El tiempo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="funciones.js"></script>
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <style>
+            *{
+                text-align: center;
+            }
+            
+            table, th, td {
+                align:center;
+                vertical-align:middle;
+                margin: 0 auto;
+                border: 1px solid black;
+            }
+            
+            #mapdiv {    
+                height: 400px;
+                width: auto;
+                margin: 0 auto;
+                border: 1px solid black;
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                
+                $(function() {
+                    $("#hoy").on("click",elTiempoHoy);
+                });
+                
+                $(function() {
+                    $("#prediccion4").on("click",elTiempoCuatro);
+                    
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>DWEC06 - El tiempo en tu ciudad</h1>
+            <label for="ciudad">Introduce una ciudad:</label>
+            <input type="text" name="ciudad" id="ciudad">
+            <br/>
+            <br/>
+            <p>Elige una opción:</p>
+            <button id="hoy">El tiempo hoy</button>
+            <button id="prediccion4">El tiempo 4 días</button>
+        </div>
+        <br/>
+        <div id="prediccion" ></div> 
+        <div id="mapdiv" style="display: none" ></div>
+        <br/>
+        <footer>
+            <h2>Rubén Ángel Rodriguez Leyva</h2>
+        </footer>
+    </body>
+</html>
